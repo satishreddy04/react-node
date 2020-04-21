@@ -9,9 +9,15 @@ const dotenv = require("dotenv");
 
 const app = express();
 
+app.use(bodyParser.json());
+
 dotenv.config()
 
+// IMPORT MODELS
+require('./models/Products');
 
+//IMPORT ROUTES
+require('./routes/productRoutes')(app);
 
 // this code does that it will redirect all request to front end app unless if we specify any routes
 if (process.env.NODE_ENV === 'production') {
@@ -30,7 +36,7 @@ mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopolo
 
 mongoose.Promise = global.Promise;
 
-app.use(bodyParser.json());
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

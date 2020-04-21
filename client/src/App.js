@@ -1,8 +1,10 @@
-import React from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App() {
+const  homeComponent = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +22,24 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+
+
+
+
+
+
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        
+        <Route path={'/'} component={homeComponent} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
