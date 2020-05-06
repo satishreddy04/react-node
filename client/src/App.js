@@ -25,13 +25,6 @@ const  homeComponent = () => {
   );
 }
 
-
-
-
-
-
-
-
 function App() {
   return (
     <BrowserRouter>

@@ -13,8 +13,6 @@ const themeConfig = {
 
 const theme  = createMuiTheme(themeConfig);
 
-const drawerWidth = 340;
-
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',

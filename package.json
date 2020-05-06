@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React Node js project build for self interest",
   "main": "index.js",
+  "engines":{
+    "node":"8.1.1",
+    "npm":"5.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
@@ -16,10 +20,12 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.9",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "passport": "^0.4.1",
+    "express-session": "^1.15.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
-    "nodemon": "^2.0.3" 
+    "nodemon": "^2.0.3"
   }
 }
