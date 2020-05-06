@@ -23,7 +23,9 @@
     "mongoose": "^5.9.9",
     "dotenv": "^8.2.0",
     "passport": "^0.4.1",
-    "express-session": "^1.15.0"
+    "express-session": "^1.15.0",
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
