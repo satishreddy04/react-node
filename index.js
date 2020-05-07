@@ -23,7 +23,7 @@ require('./routes/authRoutes')(app)
 
 
 
-mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true,useMongoClient:true  });
 
 
 //body parser is used to parse the incoming request bodies before any request made
