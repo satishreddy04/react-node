@@ -8,7 +8,6 @@ const keys = require('./config/keys')
 require('./models/users');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  });
 
 const app = express();
 
@@ -82,9 +81,9 @@ require('./routes/authRoutes')(app)
 
 // mongoose.Promise = global.Promise;
 
-// app.get('/',(req,res)=>{
-//   res.send({"Welcome":"to Node and React Project"})
-// })
+app.get('/',(req,res)=>{
+  res.send({"Welcome":"to Node and React Project"})
+})
 
 
 
