@@ -1,18 +1,48 @@
 // express frame work is the popular frame work for Node js application and its widely used
 const express = require('express');
+const cookieSession = require('cookie-session');
+const passport = require("passport");
 // mongoose  is for using Mongo DB to store the data
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const keys = require('./config/keys')
+require('./models/users');
+require('./services/passport');
+
+const app = express();
+
+app.use(cookieSession({
+  maxAge:30*24*60*60*1000,
+  keys:[keys.cookieKey]
+}))
+
+app.use(passport.initialize());
+app.use(passport.session())
+
+require('./routes/authRoutes')(app)
+
+
+
+
+mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true });
+
+
 //body parser is used to parse the incoming request bodies before any request made
 //const bodyParser = require('body-parser');
 
 // dotenv is used for getting the env files from local 
 //const dotenv = require("dotenv");
 
-//const passport = require("passport");
+
 
 //const session = require("express-session");
 
-const app = express();
+
+
+
+
+
+
+
 
 //app.use(bodyParser.json());
 
@@ -47,13 +77,15 @@ const app = express();
 
 
 
-// mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true });
 
 // mongoose.Promise = global.Promise;
 
 app.get('/',(req,res)=>{
   res.send({"Welcome":"to Node and React Project"})
 })
+
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
