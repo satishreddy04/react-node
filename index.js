@@ -23,14 +23,14 @@ require('./routes/authRoutes')(app)
 
 
 
-mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true,useMongoClient:true  });
+mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  });
 
 
 //body parser is used to parse the incoming request bodies before any request made
 //const bodyParser = require('body-parser');
 
 // dotenv is used for getting the env files from local 
-const dotenv = require("dotenv");
+//const dotenv = require("dotenv");
 
 
 
@@ -56,7 +56,7 @@ const dotenv = require("dotenv");
 //   saveUninitialized: true,
 // }));
 
-dotenv.config()
+//dotenv.config()
 
 // IMPORT MODELS
 // require('./models/Products');
