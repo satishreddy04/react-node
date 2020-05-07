@@ -8,6 +8,8 @@ const keys = require('./config/keys')
 require('./models/users');
 require('./services/passport');
 
+mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  });
+
 const app = express();
 
 app.use(cookieSession({
@@ -23,7 +25,7 @@ require('./routes/authRoutes')(app)
 
 
 
-mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true  });
+
 
 
 //body parser is used to parse the incoming request bodies before any request made
@@ -80,9 +82,9 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true
 
 // mongoose.Promise = global.Promise;
 
-app.get('/',(req,res)=>{
-  res.send({"Welcome":"to Node and React Project"})
-})
+// app.get('/',(req,res)=>{
+//   res.send({"Welcome":"to Node and React Project"})
+// })
 
 
 
