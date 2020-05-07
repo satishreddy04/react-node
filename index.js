@@ -30,7 +30,7 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true
 //const bodyParser = require('body-parser');
 
 // dotenv is used for getting the env files from local 
-//const dotenv = require("dotenv");
+const dotenv = require("dotenv");
 
 
 
@@ -56,7 +56,7 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true
 //   saveUninitialized: true,
 // }));
 
-//dotenv.config()
+dotenv.config()
 
 // IMPORT MODELS
 // require('./models/Products');
