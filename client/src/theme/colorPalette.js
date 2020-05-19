@@ -14,6 +14,7 @@ const colorPalette = {
     mediumGrey: '#dddedf',
     greyBlack: '#1A2126',
     yellow: '#FFFDE7',
+    googleBlue: '#4285f4'
   },
 };
 

@@ -13,7 +13,7 @@ const themeConfig = {
 
 const theme  = createMuiTheme(themeConfig);
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   }
