@@ -11,8 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "starts": "node index.js"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node index.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "Satish Kumar Reddy",

@@ -80,11 +80,19 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true
 
 // mongoose.Promise = global.Promise;
 
-app.get('/',(req,res)=>{
-  res.send({"Welcome":"to Node and React Project"})
+// app.get('/',(req,res)=>{
+//   res.send({"Welcome":"to Node and React Project"})
+// })
+
+if(process.env.NODE_ENV === 'production'){
+  //for production to serve main.js
+app.use(express.static('client/build'));
+
+  //express will serve up the index.html if it doesnot recognize the route
+app.get('*',(req,resp)=>{
+  resp.sendFile(path.resolve(__dirname,'client','build','index.html'));
 })
-
-
+}
 
 
 const PORT = process.env.PORT || 5000;
