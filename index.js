@@ -4,7 +4,8 @@ const cookieSession = require('cookie-session');
 const passport = require("passport");
 // mongoose  is for using Mongo DB to store the data
 const mongoose = require('mongoose');
-const keys = require('./config/keys')
+const keys = require('./config/keys');
+const path = require('path');
 require('./models/users');
 require('./services/passport');
 
